@@ -1,0 +1,7 @@
+{
+  "name": "testing-workshop",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

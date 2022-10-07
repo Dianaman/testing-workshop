@@ -1,0 +1,34 @@
+:host {
+    position: absolute;
+    .line {
+        
+        position: absolute;
+        background-color: white;
+    }
+
+    i {
+        border: solid white;
+        border-width: 0 3px 3px 0;
+        display: inline-block;
+        padding: 3px;
+        position: absolute;
+        margin-top: -4px;
+        margin-left: -3px;
+    }
+
+    i.down {
+        transform: rotate(45deg);
+    }
+    i.left {
+        transform: rotate(135deg);
+    }
+    i.up {
+        transform: rotate(225deg);
+    }
+    i.right {
+        transform: rotate(315deg);
+    }
+    i.hidden {
+        display: none;
+    }
+}

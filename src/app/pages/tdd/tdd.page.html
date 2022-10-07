@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-menu-button slot="start"></ion-menu-button>
+    <ion-title>TDD</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="content">
+    <h2>¿Qué es el TDD?</h2>
+    <div>TDD (Test-driven development o desarrollo dirigido por pruebas) es una metodología de desarrollo de software que consiste en escribir primero los tests y después el código fuente.</div>
+    <h2>Ciclo de desarrollo en el TDD</h2>
+    <div id="tdd-cicle">
+      <app-arrow [pxTopFrom]="80" [pxTopTo]="100" [pxLeftFrom]="525" [pxLeftTo]="525"></app-arrow>
+      <app-arrow [pxTopFrom]="170" [pxTopTo]="40" [pxLeftFrom]="550" [pxLeftTo]="640"></app-arrow>
+      <app-arrow [pxTopFrom]="240" [pxTopTo]="260" [pxLeftFrom]="525" [pxLeftTo]="525"></app-arrow>
+      <app-arrow [pxTopFrom]="350" [pxTopTo]="370" [pxLeftFrom]="525" [pxLeftTo]="525"></app-arrow>
+      <app-arrow [pxTopFrom]="450" [pxTopTo]="310" [pxLeftFrom]="550" [pxLeftTo]="640"></app-arrow>
+      <app-arrow [pxTopFrom]="520" [pxTopTo]="540" [pxLeftFrom]="525" [pxLeftTo]="525"></app-arrow>
+      <div class="square">(Re)escribir un test</div>
+      <app-diamond>Probar que la prueba falle</app-diamond>
+      <div class="square">Desarrollar el código</div>
+      <app-diamond>Correr todos los test</app-diamond>
+      <div class="square">Refactorizar</div>
+    </div>
+    <div>Este ciclo se lo conoce como 
+      <ion-label color="danger">rojo</ion-label> - 
+      <ion-label color="success">verde</ion-label>- 
+      <ion-label color="primary">refactor</ion-label>.<br>
+    <p><ion-label color="danger">Rojo</ion-label>: hacer que la prueba falle.</p>
+    <p><ion-label color="success">Verde</ion-label>: hacer que la prueba pase.</p>
+    <p><ion-label color="primary">Refactor</ion-label>: limpieza y mejoras del código desarrollado.</p></div>
+  <h2>Ventajas de TDD</h2>
+  <ul>
+    <li>Mejora la calidad del código</li>
+    <li>Ayuda a entender mejor el desarrollo</li>
+    <li>Es incluso más entendible que una documentación</li>
+  </ul>
+  <h2>Desventajas del TDD</h2>
+  <ul>
+    <li>Toma el doble de tiempo desarrollar los tests y el código</li>
+    <li>Refactorizar un test resulta más complejo</li>
+  </ul>
+  </div>
+</ion-content>

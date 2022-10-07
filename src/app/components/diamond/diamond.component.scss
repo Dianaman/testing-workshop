@@ -1,0 +1,26 @@
+:host {
+    .diamond-container {
+        width: 200px;
+        height: 200px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: auto;
+
+        .diamond {
+            text-align: center;
+            width: 100px;
+            height: 100px;
+            background-color: var(--ion-color-tertiary);
+            border-radius: 10px;
+            transform: rotate(45deg);
+            position: relative;
+        
+            div {
+                transform: rotate(-45deg);
+                position: absolute;
+                top: 30px;
+            }
+        }
+    }
+}

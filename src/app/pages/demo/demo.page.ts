@@ -11,6 +11,12 @@ export class DemoPage implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    /** 
+     * @todo crear funcionalidad que cada x tiempo consulte una api. (dolarsi.com?)
+     * Si falla tomar el último valor del dispositivo. 
+     * Que haya la posibilidad de forzar la consulta a la api.
+     * Realizar conversiones
+    */
   }
 
   public loadList(): void {

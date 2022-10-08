@@ -1,9 +1,40 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>angular-testing</ion-title>
+    <ion-menu-button slot="start"></ion-menu-button>
+    <ion-title>Testing en Angular</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <div class="content">
+    <h2>Karma</h2>
+    Karma es una herramienta que invoca un web server el cual ejecuta el código fuente contra el código de test para cada navegador configurado.<br><br>
+    Karma escucha los cambios de los archivos especificados en el archivo de configuración, y por cada cambio, dispara la ejecución de los tests mandando una señal al servidor de testing, y así avisar a todos los navegadores de ejecutar nuevamente el código.<br><br>
+    Los navegadores cargar el código fuente en un IFrame, ejecuta los tests y reportan los resultados al servidor.<br><br>
+    El servidor recolecta los resultados de todos los navegadores y se los presenta al desarrollador, indicando si pasaron o fallaron los tests.
 
+
+    <h2>Jasmine</h2>
+    Jasmine es un framework de testing para Javascript, basado en la idea de BDD (Behaviour-Driven Development o Desarrollo dirigido por comportamientos), el cual combina las técnicas generales y principios del TDD con el DDD (Domain-driven Design o Diseño dirigido por el dominio) y el OOAD (Object-oriented Analysis and Design o Análisis y diseño orientado a objetos).<br><br>
+    Algunos de los métodos que brinda son:
+    <pre><code>{{describeCode}}</code></pre>
+    <pre><code>{{fdescribeCode}}</code></pre>
+    <pre><code>{{xdescribeCode}}</code></pre>
+    <pre><code>{{itCode}}</code></pre>
+    <pre><code>{{fitCode}}</code></pre>
+    <pre><code>{{xitCode}}</code></pre>
+    <pre><code>{{beforeAllCode}}</code></pre>
+    <pre><code>{{beforeEachCode}}</code></pre>
+    <pre><code>{{afterAllCode}}</code></pre>
+    <pre><code>{{afterEachCode}}</code></pre>
+    <pre><code>{{spyOnCode}}</code></pre>
+    <pre><code>{{spyOnPropertyCode}}</code></pre>
+    <pre><code>{{spyClass}}</code></pre>
+    <pre><code>{{expectCode}}</code></pre>
+    <pre><code>{{expectAsyncCode}}</code></pre>
+    <pre><code>{{matcherClass}}</code></pre>
+
+    <h2>Angular</h2>
+    <pre><code>{{testBedClass}}</code></pre>
+  </div>
 </ion-content>

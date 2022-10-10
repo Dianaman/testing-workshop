@@ -1,16 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormatNumberPipe } from 'src/app/pipes/format-number.pipe';
+import { ConvertCurrencyPipe } from './convert-currency.pipe';
 
 const PIPES = [
-  FormatNumberPipe
 ];
 
 @NgModule({
   imports: [
     CommonModule,
   ],
-  declarations: [...PIPES],
+  declarations: [...PIPES, ConvertCurrencyPipe],
   exports: [...PIPES]
 })
 export class PipesModule {}

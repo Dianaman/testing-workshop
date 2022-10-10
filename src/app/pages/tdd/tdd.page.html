@@ -10,19 +10,39 @@
     <h2>¿Qué es el TDD?</h2>
     <div>TDD (Test-driven development o desarrollo dirigido por pruebas) es una metodología de desarrollo de software que consiste en escribir primero los tests y después el código fuente.</div>
     <h2>Ciclo de desarrollo en el TDD</h2>
-    <div id="tdd-cicle">
-      <app-arrow [pxTopFrom]="80" [pxTopTo]="100" [pxLeftFrom]="525" [pxLeftTo]="525"></app-arrow>
-      <app-arrow [pxTopFrom]="170" [pxTopTo]="40" [pxLeftFrom]="550" [pxLeftTo]="640"></app-arrow>
-      <app-arrow [pxTopFrom]="240" [pxTopTo]="260" [pxLeftFrom]="525" [pxLeftTo]="525"></app-arrow>
-      <app-arrow [pxTopFrom]="350" [pxTopTo]="370" [pxLeftFrom]="525" [pxLeftTo]="525"></app-arrow>
-      <app-arrow [pxTopFrom]="450" [pxTopTo]="310" [pxLeftFrom]="550" [pxLeftTo]="640"></app-arrow>
-      <app-arrow [pxTopFrom]="520" [pxTopTo]="540" [pxLeftFrom]="525" [pxLeftTo]="525"></app-arrow>
-      <div class="square">(Re)escribir un test</div>
-      <app-diamond>Probar que la prueba falle</app-diamond>
-      <div class="square">Desarrollar el código</div>
-      <app-diamond>Correr todos los test</app-diamond>
-      <div class="square">Refactorizar</div>
+    
+    <app-arrow [pxTopFrom]="escribirTestRects?.bottom" [pxTopTo]="probarFallaRects?.top"
+    [pxLeftFrom]="escribirTestRects?.centerWidth" [pxLeftTo]="probarFallaRects?.centerWidth" 
+    *ngIf="dimensionesCargadas"></app-arrow>
+
+    <app-arrow [pxTopFrom]="probarFallaRects?.bottom" [pxTopTo]="desarrollarCodigoRects?.top"
+    [pxLeftFrom]="probarFallaRects?.centerWidth" [pxLeftTo]="desarrollarCodigoRects?.centerWidth" 
+    *ngIf="dimensionesCargadas" texto="Fallan tests"></app-arrow>
+
+    <app-arrow [pxTopFrom]="probarFallaRects?.centerHeight" [pxTopTo]="escribirTestRects?.centerHeight"
+    [pxLeftFrom]="probarFallaRects?.right" [pxLeftTo]="escribirTestRects?.right" 
+    *ngIf="dimensionesCargadas" texto="Pasan tests"></app-arrow>
+
+    <app-arrow [pxTopFrom]="desarrollarCodigoRects?.bottom" [pxTopTo]="probarExitoRects?.top"
+    [pxLeftFrom]="desarrollarCodigoRects?.centerWidth" [pxLeftTo]="probarExitoRects?.centerWidth" 
+    *ngIf="dimensionesCargadas"></app-arrow>
+
+    <app-arrow [pxTopFrom]="probarExitoRects?.bottom" [pxTopTo]="refactorizarRects?.top"
+    [pxLeftFrom]="probarExitoRects?.centerWidth" [pxLeftTo]="refactorizarRects?.centerWidth" 
+    *ngIf="dimensionesCargadas" texto="Pasan tests"></app-arrow>
+
+    <app-arrow [pxTopFrom]="probarExitoRects?.centerHeight" [pxTopTo]="desarrollarCodigoRects?.centerHeight"
+    [pxLeftFrom]="probarExitoRects?.right" [pxLeftTo]="desarrollarCodigoRects?.right" 
+    *ngIf="dimensionesCargadas" texto="Fallan tests"></app-arrow>
+    
+    <div id="tdd-cycle">
+      <div class="square" #escribirTest>(Re)escribir un test</div>
+      <div #probarFalla><app-diamond>Probar que la prueba falle</app-diamond></div>
+      <div class="square" #desarrollarCodigo>Desarrollar el código</div>
+      <div #probarExito><app-diamond>Correr todos los test</app-diamond></div>
+      <div class="square" #refactorizar>Refactorizar</div>
     </div>
+
     <div>Este ciclo se lo conoce como 
       <ion-label color="danger">rojo</ion-label> - 
       <ion-label color="success">verde</ion-label>- 

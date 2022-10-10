@@ -1,9 +1,15 @@
 :host {
-    .tdd-cicle {
+    #tdd-cycle {
+        display: flex;
+        flex-direction: column;
         position: relative;
-
-        .app-arrow {
-            position: absolute;
-        }
+        justify-content: space-between;
+        align-items: center;
+        height: 800px;
+        margin-bottom: 20px;
+    }
+    app-arrow {
+        position: absolute;
+        z-index: 9;
     }
 }

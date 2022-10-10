@@ -21,4 +21,16 @@ describe('DemoPage', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('Debe invocar al servicio de conversión en el OnInit', () => {
+
+  });
+
+  it('Debe mostrar la fecha de última actualización', () => {
+
+  });
+
+  it('Debe mostrar los valores de cambio', () => {
+
+  });
 });

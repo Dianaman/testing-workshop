@@ -1,7 +1,7 @@
 :host {
     position: absolute;
+
     .line {
-        
         position: absolute;
         background-color: white;
     }
@@ -30,5 +30,15 @@
     }
     i.hidden {
         display: none;
+    }
+    .text {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 2px;
+        color: var(--ion-color-primary);
+        opacity: 0.8;
     }
 }

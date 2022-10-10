@@ -45,6 +45,12 @@ describe('ArrowComponent', () => {
     expect(component.lineThreeValues.width).withContext('Width flecha horizontal fin').toEqual('0px');
     expect(component.lineThreeValues.height).withContext('Height flecha horizontal fin').toEqual('2px');
 
+    expect(component.textValues.top).withContext('Top texto').toEqual('100px');
+    expect(component.textValues.left).withContext('Left texto').toEqual('50px');
+    expect(component.textValues.minWidth).withContext('Min width texto').toEqual('100px');
+    expect(component.textValues.minHeight).withContext('Min height texto').toEqual('100px');
+    expect(component.textValues.textAlign).withContext('Alineación texto').toEqual('left');
+
     expect(component.arrowDirection).withContext('Punta de flecha').toEqual(ARROW_DIRECTIONS.UP);
   })
 
@@ -70,6 +76,12 @@ describe('ArrowComponent', () => {
     expect(component.lineThreeValues.left).withContext('Left flecha horizontal fin').toEqual('100px');
     expect(component.lineThreeValues.width).withContext('Width flecha horizontal fin').toEqual('50px');
     expect(component.lineThreeValues.height).withContext('Height flecha horizontal fin').toEqual('2px');
+
+    expect(component.textValues.top).withContext('Top texto').toEqual('100px');
+    expect(component.textValues.left).withContext('Left texto').toEqual('50px');
+    expect(component.textValues.minWidth).withContext('Min width texto').toEqual('100px');
+    expect(component.textValues.minHeight).withContext('Min height texto').toEqual('100px');
+    expect(component.textValues.textAlign).withContext('Alineación texto').toEqual('right');
 
     expect(component.arrowDirection).withContext('Punta de flecha').toEqual(ARROW_DIRECTIONS.LEFT);
   });
@@ -97,6 +109,12 @@ describe('ArrowComponent', () => {
     expect(component.lineThreeValues.width).withContext('Width flecha horizontal fin').toEqual('0px');
     expect(component.lineThreeValues.height).withContext('Height flecha horizontal fin').toEqual('2px');
 
+    expect(component.textValues.top).withContext('Top texto').toEqual('100px');
+    expect(component.textValues.left).withContext('Left texto').toEqual('50px');
+    expect(component.textValues.minWidth).withContext('Min width texto').toEqual('150px');
+    expect(component.textValues.minHeight).withContext('Min height texto').toEqual('20px');
+    expect(component.textValues.textAlign).withContext('Alineación texto').toEqual('center');
+
     expect(component.arrowDirection).withContext('Punta de flecha').toEqual(ARROW_DIRECTIONS.RIGHT);
   });
 
@@ -122,6 +140,12 @@ describe('ArrowComponent', () => {
     expect(component.lineThreeValues.left).withContext('Left flecha horizontal fin').toEqual('200px');
     expect(component.lineThreeValues.width).withContext('Width flecha horizontal fin').toEqual('50px');
     expect(component.lineThreeValues.height).withContext('Height flecha horizontal fin').toEqual('2px');
+
+    expect(component.textValues.top).withContext('Top texto').toEqual('100px');
+    expect(component.textValues.left).withContext('Left texto').toEqual('50px');
+    expect(component.textValues.minWidth).withContext('Min width texto').toEqual('200px');
+    expect(component.textValues.minHeight).withContext('Min height texto').toEqual('100px');
+    expect(component.textValues.textAlign).withContext('Alineación texto').toEqual('right');
 
     expect(component.arrowDirection).withContext('Punta de flecha').toEqual(ARROW_DIRECTIONS.LEFT);
   });
@@ -149,6 +173,12 @@ describe('ArrowComponent', () => {
     expect(component.lineThreeValues.width).withContext('Width flecha horizontal fin').toEqual('0px');
     expect(component.lineThreeValues.height).withContext('Height flecha horizontal fin').toEqual('2px');
 
+    expect(component.textValues.top).withContext('Top texto').toEqual('100px');
+    expect(component.textValues.left).withContext('Left texto').toEqual('50px');
+    expect(component.textValues.minWidth).withContext('Min width texto').toEqual('100px');
+    expect(component.textValues.minHeight).withContext('Min height texto').toEqual('100px');
+    expect(component.textValues.textAlign).withContext('Alineación texto').toEqual('left');
+
     expect(component.arrowDirection).withContext('Punta de flecha').toEqual(ARROW_DIRECTIONS.DOWN);
   });
 
@@ -174,6 +204,12 @@ describe('ArrowComponent', () => {
     expect(component.lineThreeValues.left).withContext('Left flecha horizontal fin').toEqual('0px');
     expect(component.lineThreeValues.width).withContext('Width flecha horizontal fin').toEqual('50px');
     expect(component.lineThreeValues.height).withContext('Height flecha horizontal fin').toEqual('2px');
+
+    expect(component.textValues.top).withContext('Top texto').toEqual('100px');
+    expect(component.textValues.left).withContext('Left texto').toEqual('0px');
+    expect(component.textValues.minWidth).withContext('Min width texto').toEqual('100px');
+    expect(component.textValues.minHeight).withContext('Min height texto').toEqual('100px');
+    expect(component.textValues.textAlign).withContext('Alineación texto').toEqual('left');
 
     expect(component.arrowDirection).withContext('Punta de flecha').toEqual(ARROW_DIRECTIONS.RIGHT);
   });
@@ -201,6 +237,12 @@ describe('ArrowComponent', () => {
     expect(component.lineThreeValues.width).withContext('Width flecha horizontal fin').toEqual('0px');
     expect(component.lineThreeValues.height).withContext('Height flecha horizontal fin').toEqual('2px');
 
+    expect(component.textValues.top).withContext('Top texto').toEqual('100px');
+    expect(component.textValues.left).withContext('Left texto').toEqual('50px');
+    expect(component.textValues.minWidth).withContext('Min width texto').toEqual('150px');
+    expect(component.textValues.minHeight).withContext('Min height texto').toEqual('20px');
+    expect(component.textValues.textAlign).withContext('Alineación texto').toEqual('center');
+
     expect(component.arrowDirection).withContext('Punta de flecha').toEqual(ARROW_DIRECTIONS.LEFT);
   });
 
@@ -227,6 +269,12 @@ describe('ArrowComponent', () => {
     expect(component.lineThreeValues.width).withContext('Width flecha horizontal fin').toEqual('200px');
     expect(component.lineThreeValues.height).withContext('Height flecha horizontal fin').toEqual('2px');
 
+    expect(component.textValues.top).withContext('Top texto').toEqual('100px');
+    expect(component.textValues.left).withContext('Left texto').toEqual('0px');
+    expect(component.textValues.minWidth).withContext('Min width texto').toEqual('200px');
+    expect(component.textValues.minHeight).withContext('Min height texto').toEqual('100px');
+    expect(component.textValues.textAlign).withContext('Alineación texto').toEqual('left');
+
     expect(component.arrowDirection).withContext('Punta de flecha').toEqual(ARROW_DIRECTIONS.RIGHT);
   });
 
@@ -252,6 +300,12 @@ describe('ArrowComponent', () => {
     expect(component.lineThreeValues.left).withContext('Left flecha horizontal fin').toEqual('0px');
     expect(component.lineThreeValues.width).withContext('Width flecha horizontal fin').toEqual('0px');
     expect(component.lineThreeValues.height).withContext('Height flecha horizontal fin').toEqual('0px');
+
+    expect(component.textValues.top).withContext('Top texto').toEqual('0px');
+    expect(component.textValues.left).withContext('Left texto').toEqual('0px');
+    expect(component.textValues.minWidth).withContext('Min width texto').toEqual('0px');
+    expect(component.textValues.minHeight).withContext('Min height texto').toEqual('0px');
+    expect(component.textValues.textAlign).withContext('Alineación texto').toEqual('center');
 
     expect(component.arrowDirection).withContext('Punta de flecha').toEqual(ARROW_DIRECTIONS.HIDDEN);
   });

@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
+import { ComponentsModule } from 'src/app/components/components.module';
 
 import { TddPage } from './tdd.page';
 
@@ -10,7 +11,10 @@ describe('TddPage', () => {
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ TddPage ],
-      imports: [IonicModule.forRoot()]
+      imports: [
+        IonicModule.forRoot(),
+        ComponentsModule
+      ]
     }).compileComponents();
 
     fixture = TestBed.createComponent(TddPage);

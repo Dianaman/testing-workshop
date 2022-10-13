@@ -24,10 +24,13 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+@import '~swiper/scss';
+@import '~@ionic/angular/css/ionic-swiper';
+@import '~swiper/scss/pagination';
 
 .content {
     padding: 16px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: montserrat, Verdana, Tahoma, sans-serif;
     font-size: 14px;
 }
 

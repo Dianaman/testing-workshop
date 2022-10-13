@@ -3,8 +3,12 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'conceptos',
+    path: 'home',
     loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule)
+  },
+  {
+    path: 'conceptos',
+    loadChildren: () => import('./pages/conceptos/conceptos.module').then( m => m.ConceptosPageModule)
   },
   {
     path: 'demo',
@@ -24,7 +28,7 @@ const routes: Routes = [
   },
   {
     path: '**',
-    redirectTo: 'conceptos'
+    redirectTo: 'home'
   },
 ];
 

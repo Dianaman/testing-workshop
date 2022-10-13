@@ -1,94 +1,10 @@
 <ion-header>
   <ion-toolbar>
     <ion-menu-button slot="start"></ion-menu-button>
-    <ion-title>Testing de Software</ion-title>
   </ion-toolbar>
 </ion-header>
-
-<ion-content>
-  <div class="content">
-    <h2>¿Qué es el testing?</h2>
-    <div>Se define como el proceso de ejecutar un programa para detectar errores. Si el testing se realiza de manera correcta, los errores se eliminarían del sistema.</div>
-
-    <h2>Tipos de testing de software</h2>
-    <ion-accordion-group>
-      <ion-accordion value="first">
-        <ion-item slot="header" color="light">
-          <ion-label>Testing Manual</ion-label>
-        </ion-item>
-        <div class="ion-padding" slot="content">
-          Se realiza manual, sin ningún tipo de herramienta de automatización o script. El tester ocupa el rol del usuario final e imita su comportamiento para detectar posibles errores.
-        </div>
-      </ion-accordion>
-      <ion-accordion value="second">
-        <ion-item slot="header" color="light">
-          <ion-label>Testing Automatizado</ion-label>
-        </ion-item>
-        <div class="ion-padding" slot="content">
-          El tester escribe scripts y utiliza un software para probar el producto, permite re-ejecutar tests rápida y repetidamente. Incrementa la covertura de código, la precisión y ahorra tiempo y dinero a comparación del testing manual.
-        </div>
-      </ion-accordion>
-    </ion-accordion-group>
-
-    <h2>Tipos de técnica de testing</h2>
-    <ion-accordion-group>
-      <ion-accordion value="first">
-        <ion-item slot="header" color="light">
-          <ion-label>Test de caja negra</ion-label>
-        </ion-item>
-        <div class="ion-padding" slot="content">
-          El tester no tiene acceso al código fuente por lo que el test se realiza sin tomar en cuenta la estructura lógica del programa.
-        </div>
-      </ion-accordion>
-      <ion-accordion value="second">
-        <ion-item slot="header" color="light">
-          <ion-label>Test de caja blanca</ion-label>
-        </ion-item>
-        <div class="ion-padding" slot="content">
-          El tester conoce cómo funciona el programa internamente y se asegura que todas las operaciones internas se ejecuten de acuerdo a las especificaciones.
-        </div>
-      </ion-accordion>
-    </ion-accordion-group>
-
-    <h2>Niveles de testing</h2>
-    <ion-accordion-group>
-      <ion-accordion value="first">
-        <ion-item slot="header" color="light">
-          <ion-label>Testing Unitario</ion-label>
-        </ion-item>
-        <div class="ion-padding" slot="content">
-          Generalmente creado por los programadores, prueban la unidad más pequeña de software. En este test, se pueden probar una unidad indivualmente o interrelacionada con otras. Se utilizan inputs de prueba y se observan sus outputs.
-        </div>
-      </ion-accordion>
-      
-      <ion-accordion value="second">
-        <ion-item slot="header" color="light">
-          <ion-label>Test de integración</ion-label>
-        </ion-item>
-        <div class="ion-padding" slot="content">
-          Se testean los módulos como grupo, buscando exponer los defectos de las interacciones de las unidades lógicas entre sí.
-        </div>
-      </ion-accordion>
-
-      <ion-accordion value="third">
-        <ion-item slot="header" color="light">
-          <ion-label>Test de regresión / Prueba del sistema</ion-label>
-        </ion-item>
-        <div class="ion-padding" slot="content">
-          Prueba que todos los componentes del programa funcionen bien a medida que se vayan incorporando nuevas funcionalidades.
-        </div>
-      </ion-accordion>
-      
-      <ion-accordion value="fourth">
-        <ion-item slot="header" color="light">
-          <ion-label>Prueba de humo / Test de aceptación</ion-label>
-        </ion-item>
-        <div class="ion-padding" slot="content">
-          Proceso que determina si el software implementado se encuentra estable o no. La confirmación la otorga el equipo de QA y se prueban las funcionalidades más importantes siendo éste el mínimo set de pruebas.
-        </div>
-      </ion-accordion>
-
-
-    </ion-accordion-group>
+<ion-content forceOverscroll="false">
+  <div class="content presentacion">
+    Workshop<br>de testing
   </div>
 </ion-content>

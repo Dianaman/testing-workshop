@@ -10,7 +10,15 @@
     <h2>¿Qué es el TDD?</h2>
     <div>TDD (Test-driven development o desarrollo dirigido por pruebas) es una metodología de desarrollo de software que consiste en escribir primero los tests y después el código fuente.</div>
     <h2>Ciclo de desarrollo en el TDD</h2>
-    
+
+    <div>Este ciclo se lo conoce como 
+      <ion-label color="danger">rojo</ion-label> - 
+      <ion-label color="success">verde</ion-label>- 
+      <ion-label color="primary">refactor</ion-label>.<br>
+    <p><ion-label color="danger">Rojo</ion-label>: hacer que la prueba falle.</p>
+    <p><ion-label color="success">Verde</ion-label>: hacer que la prueba pase.</p>
+    <p><ion-label color="primary">Refactor</ion-label>: limpieza y mejoras del código desarrollado.</p>
+
     <app-arrow [pxTopFrom]="escribirTestRects?.bottom" [pxTopTo]="probarFallaRects?.top"
     [pxLeftFrom]="escribirTestRects?.centerWidth" [pxLeftTo]="probarFallaRects?.centerWidth" 
     *ngIf="dimensionesCargadas"></app-arrow>
@@ -42,14 +50,7 @@
       <div #probarExito><app-diamond>Correr todos los test</app-diamond></div>
       <div class="square" #refactorizar>Refactorizar</div>
     </div>
-
-    <div>Este ciclo se lo conoce como 
-      <ion-label color="danger">rojo</ion-label> - 
-      <ion-label color="success">verde</ion-label>- 
-      <ion-label color="primary">refactor</ion-label>.<br>
-    <p><ion-label color="danger">Rojo</ion-label>: hacer que la prueba falle.</p>
-    <p><ion-label color="success">Verde</ion-label>: hacer que la prueba pase.</p>
-    <p><ion-label color="primary">Refactor</ion-label>: limpieza y mejoras del código desarrollado.</p></div>
+  </div>
   <h2>Ventajas de TDD</h2>
   <ul>
     <li>Mejora la calidad del código</li>

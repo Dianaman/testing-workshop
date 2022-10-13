@@ -15,6 +15,8 @@ describe('ArrowComponent', () => {
 
     fixture = TestBed.createComponent(ArrowComponent);
     component = fixture.componentInstance;
+    (<any>component)['pxReturn'] = 50;
+
     fixture.detectChanges();
   }));
 

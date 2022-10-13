@@ -12,7 +12,7 @@
       <li>Crear el pipe <code>SumPipe</code> que recibiendo un objeto y un string con el nombre del campo, retorne la sumatoria todos los valores de dicho campo.</li>
       <li>Crear la directiva <code>EstadoGastosDirective</code> que según el valor del contenido, pinte el texto de determinado color si pertenece a un rango u otro.</li>
       <li>Crear el servicio <code>GastosService</code> con el atributo <pre><code>{{gastosServiceGastosSubject}}</code></pre></li>
-      <li>En <code>GastosService</code> crear el método <pre><code>{{gastosServiceObtenerGastosDesdeServicio}}</code></pre> que retorne los datos de <code>GastosMock.json</code> al cabo de 2 segundos.</li>
+      <li>En <code>GastosService</code> crear el método <pre><code>{{gastosServiceObtenerGastosDesdeServicio}}</code></pre> que retorne los datos de <code>gastos-mock.ts</code> al cabo de 2 segundos.</li>
       <li>En <code>GastosService</code> crear el método <pre><code>{{gastosServiceObtenerGastos}}</code></pre> que llama a <code>obtenerGastosDesdeServicio</code> si <code>gastos$</code> es null y devuelve un observable de <code>gastos$</code>.</li>
       <li>En <code>GastosService</code> crear el método <pre><code>{{gastosServiceAgregarGasto}}</code></pre> que agregue el gasto a <code>gastos$</code> y retorne un booleano si se realizó con éxito.</li>
       <li>En <code>GastosService</code> crear el método <pre><code>{{gastosServiceEliminarGasto}}</code></pre> que elimine de <code>gastos$</code> el gasto indicado y retorne un booleano si se realizó con éxito.</li>
@@ -20,11 +20,5 @@
       <li>En <code>ListadoGastosComponent</code>crear el método <pre><code>{{listadoGastosComponentAgregarGasto}}</code></pre> que llame al método con el mismo nombre perteneciente al servicio y que muestre un mensaje de éxito o error.</li>
       <li>En <code>ListadoGastosComponent</code>crear el método <pre><code>{{listadoGastosComponentEliminarGasto}}</code></pre> que llame al método con el mismo nombre perteneciente al servicio y que muestre un mensaje de éxito o error.</li>
     </ol>
-    <!-- TODO: 
-      * Crear GastosMock.json 
-      * Crear GastoComponent para formulario de alta
-      * Ver si se crea input con ingresos para hacer ingreso - gastos
-      * Ver de crear un componente para ingreso de rangos y colores o crear una constante
-    -->
   </div>
 </ion-content>

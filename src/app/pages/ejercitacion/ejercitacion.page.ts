@@ -17,7 +17,6 @@ export class EjercitacionPage implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
 }

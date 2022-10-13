@@ -5,6 +5,7 @@ import { ConversionService } from './conversion.service';
 describe('ConversionService', () => {
   let service: ConversionService;
   const startingTime = new Date();
+  const aMinutos: number = 1000 * 60;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
@@ -25,84 +26,103 @@ describe('ConversionService', () => {
   });
   
   it('Llamar a la api si no hay fecha de última actualización', () => {
+    /** Preparación datos de entrada */
     const method = spyOn<any>(service, 'fetchConversion');
 
     service['fechaUltimaActualizacion$'].next(null);
-    service['tiempoRefresco'] = 1000 * 60 * 5; // 5 minutos
+    service['tiempoRefresco'] = aMinutos * 5;
     service['datosConversion$'].next([]);
+
+    /** Ejecución del test */
     service.initTimer();
 
+    /** Comprobación del test */
     expect(method).toHaveBeenCalled();
   });
 
   it('Llamar a la api si pasó más tiempo que el tiempo de refresco', () => {
+    /** Preparación datos de entrada */
     const method = spyOn<any>(service, 'fetchConversion');
 
-    jasmine.clock().mockDate(new Date(startingTime.valueOf() + (1000 * 60 * 6)));
+    jasmine.clock().mockDate(new Date(startingTime.valueOf() + (aMinutos * 6)));
 
     service['fechaUltimaActualizacion$'].next(startingTime);
-    service['tiempoRefresco'] = 1000 * 60 * 5; // 5 minutos
+    service['tiempoRefresco'] = aMinutos * 5;
     service['datosConversion$'].next([]);
 
+    /** Ejecución del test */
     service.initTimer();
 
+    /** Comprobación del test */
     expect(method).toHaveBeenCalled();
   });
 
   it('Llamar a la api si no hay datos guardados', () => {
+    /** Preparación datos de entrada */
     const method = spyOn<any>(service, 'fetchConversion');
 
-    jasmine.clock().mockDate(new Date(startingTime.valueOf() + (1000 * 60 * 4)));
+    jasmine.clock().mockDate(new Date(startingTime.valueOf() + (aMinutos * 4)));
     
     service['fechaUltimaActualizacion$'].next(startingTime);
-    service['tiempoRefresco'] = 1000 * 60 * 5; // 5 minutos
+    service['tiempoRefresco'] = aMinutos * 5;
     service['datosConversion$'].next(null);
 
+    /** Ejecución del test */
     service.initTimer();
 
+    /** Comprobación del test */
     expect(method).toHaveBeenCalled();
   });
 
   it('Traer los datos guardados si pasó menos tiempo que el tiempo de refresco', () => {
+    /** Preparación datos de entrada */
     const method = spyOn<any>(service, 'fetchConversion');
 
-    jasmine.clock().mockDate(new Date(startingTime.valueOf() + (1000 * 60 * 4)));
+    jasmine.clock().mockDate(new Date(startingTime.valueOf() + (aMinutos * 4)));
     
     service['fechaUltimaActualizacion$'].next(startingTime);
-    service['tiempoRefresco'] = 1000 * 60 * 5; // 5 minutos
+    service['tiempoRefresco'] = aMinutos * 5;
     service['datosConversion$'].next([]);
 
+    /** Ejecución del test */
     service.initTimer();
 
+    /** Comprobación del test */
     expect(method).not.toHaveBeenCalled();
-
   });
 
   it('Traer los datos guardados si la llamada a la api falla', () => {
+    /** Preparación datos de entrada */
     const method = spyOn<any>(service, 'fetchConversion').and.rejectWith(null);
 
-    jasmine.clock().mockDate(new Date(startingTime.valueOf() + (1000 * 60 * 6)));
+    jasmine.clock().mockDate(new Date(startingTime.valueOf() + (aMinutos * 6)));
     
     service['fechaUltimaActualizacion$'].next(startingTime);
-    service['tiempoRefresco'] = 1000 * 60 * 5; // 5 minutos
+    service['tiempoRefresco'] = aMinutos * 5;
     service['datosConversion$'].next([]);
 
+    /** Ejecución del test */
     service.initTimer();
 
+    /** Comprobación del test */
     expect(method).toHaveBeenCalled();
     expect(service['datosConversion$'].value).toEqual([]);
   });
 
   it('Forzar la llamada de la api aunque no cumpla requerimientos', () => {
-    const method = spyOn<any>(service, 'fetchConversion').and.rejectWith(null);
+    /** Preparación datos de entrada */
+    const method = spyOn<any>(service, 'fetchConversion');
 
-    jasmine.clock().mockDate(new Date(startingTime.valueOf() + (1000 * 60 * 6)));
+    jasmine.clock().mockDate(new Date(startingTime.valueOf() + (aMinutos * 6)));
     
     service['fechaUltimaActualizacion$'].next(startingTime);
-    service['tiempoRefresco'] = 1000 * 60 * 5; // 6 minutos
+    service['tiempoRefresco'] = aMinutos * 5;
     service['datosConversion$'].next([]);
 
+    /** Ejecución del test */
     service.actualizarDatos();
+
+    /** Comprobación del test */
     expect(method).toHaveBeenCalled();
     expect(service['datosConversion$'].value).toEqual([]);
   });

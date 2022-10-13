@@ -16,17 +16,13 @@ export class ConvertCurrencyPipe implements PipeTransform {
       let valorDeVenta = '';
       if (monedaActual === 'pesos') {
         valorDeVenta = valores.find(cambio => {
-          console.log(monedaAConvertir, cambio?.casa?.nombre);
           return cambio?.casa?.nombre.toLowerCase() === monedaAConvertir;
         })?.casa?.venta ?? '';
-        console.log('valorDeVenta',  parseFloat(valorDeVenta.replace(/,/g, '.')));
         return valorDeVenta ? monto /  parseFloat(valorDeVenta.replace(/,/g, '.')) : null;
       } else {
         valorDeVenta = valores.find(cambio => {
-        console.log(monedaActual, cambio?.casa?.nombre);
           return cambio?.casa?.nombre.toLowerCase() === monedaActual;
         })?.casa?.venta ?? '';
-        console.log('valorDeVenta',  parseFloat(valorDeVenta.replace(/,/g, '.')));
         return valorDeVenta ? monto *  parseFloat(valorDeVenta.replace(/,/g, '.')) : null;
       }
     } else {

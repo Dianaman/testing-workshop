@@ -52,7 +52,7 @@ describe('ArrowComponent', () => {
     expect(component.textValues.textAlign).withContext('Alineación texto').toEqual('left');
 
     expect(component.arrowDirection).withContext('Punta de flecha').toEqual(ARROW_DIRECTIONS.UP);
-  })
+  });
 
   it('up right', () => {
     component.pxLeftFrom = 50;

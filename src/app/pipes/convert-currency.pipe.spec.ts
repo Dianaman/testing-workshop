@@ -21,6 +21,8 @@ describe('ConvertCurrencyPipe', () => {
   });
 
   it('Debe convertir pesos a dólares', () => {
+    /** Preparación datos de entrada */
+    const monto = 150;
     spyOn(service, 'getConversionGuardada').and.returnValue([{
       casa: { 
         nombre:'Dolar blue',
@@ -30,11 +32,16 @@ describe('ConvertCurrencyPipe', () => {
       }
     }]);
 
-    let res = pipe.transform(150, 'Pesos', 'Dolar blue');
+    /** Ejecución del test */
+    let res = pipe.transform(monto, 'Pesos', 'Dolar blue');
+
+    /** Comprobación del test */
     expect(res).toEqual(1);
   });
 
   it('Debe convertir dólares a pesos', () => {
+    /** Preparación datos de entrada */
+    const monto = 1;
     spyOn(service, 'getConversionGuardada').and.returnValue([{
       casa: { 
         nombre:'Dolar blue',
@@ -44,25 +51,40 @@ describe('ConvertCurrencyPipe', () => {
       }
     }]);
 
-    let res = pipe.transform(1, 'Dolar blue', 'Pesos');
+    /** Ejecución del test */
+    let res = pipe.transform(monto, 'Dolar blue', 'Pesos');
+    
+    /** Comprobación del test */
     expect(res).toEqual(150);
   });
 
   it('Si no hay valores de cambio, devolver null', () => {
+    /** Preparación datos de entrada */
+    const monto = 1;
     spyOn(service, 'getConversionGuardada').and.returnValue(null);
 
-    let res = pipe.transform(1, 'dolares', 'pesos');
+    /** Ejecución del test */
+    let res = pipe.transform(monto, 'dolares', 'pesos');
+
+    /** Comprobación del test */
     expect(res).toEqual(null);
   });
 
   it('Si los valores de cambio son [], devolver null', () => {
+    /** Preparación datos de entrada */
+    const monto = 1;
     spyOn(service, 'getConversionGuardada').and.returnValue([]);
 
-    let res = pipe.transform(1, 'dolares', 'pesos');
+    /** Ejecución del test */
+    let res = pipe.transform(monto, 'dolares', 'pesos');
+
+    /** Comprobación del test */
     expect(res).toEqual(null);
   });
 
   it('Si el valor de venta es 0, devolver null', () => {
+    /** Preparación datos de entrada */
+    const monto = 1;
     spyOn(service, 'getConversionGuardada').and.returnValue([{
       casa: { 
         nombre:'Dolar blue',
@@ -72,7 +94,10 @@ describe('ConvertCurrencyPipe', () => {
       }
     }]);
 
-    let res = pipe.transform(1, 'Dólar blue', 'Pesos');
+    /** Ejecución del test */
+    let res = pipe.transform(monto, 'Dólar blue', 'Pesos');
+
+    /** Comprobación del test */
     expect(res).toEqual(null);
   });
 });

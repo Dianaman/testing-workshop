@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { AngularTestingPageRoutingModule } from './angular-testing-routing.module';
 
 import { AngularTestingPage } from './angular-testing.page';
+import { SwiperModule } from 'swiper/angular';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    AngularTestingPageRoutingModule
+    AngularTestingPageRoutingModule,
+    SwiperModule
   ],
   declarations: [AngularTestingPage]
 })

@@ -7,7 +7,7 @@
 
 <ion-content>
   <div class="content">
-    <swiper [pagination]="true">
+    <swiper [pagination]="true" #newSwiper>
       <ng-template swiperSlide>
         <div class="slide">
           <h2>¿Qué es el testing?</h2>
@@ -86,19 +86,19 @@
 
             <ion-accordion value="third">
               <ion-item slot="header" color="light">
-                <ion-label>Test de regresión / Prueba del sistema</ion-label>
+                <ion-label>Test de regresión</ion-label>
               </ion-item>
               <div class="ion-padding" slot="content">
-                Prueba que todos los componentes del programa funcionen bien a medida que se vayan incorporando nuevas funcionalidades.
+                También llamado prueba del sistema. Prueba que todos los componentes del programa funcionen bien a medida que se vayan incorporando nuevas funcionalidades.
               </div>
             </ion-accordion>
             
             <ion-accordion value="fourth">
               <ion-item slot="header" color="light">
-                <ion-label>Prueba de humo / Test de aceptación</ion-label>
+                <ion-label>Prueba de humo</ion-label>
               </ion-item>
               <div class="ion-padding" slot="content">
-                Proceso que determina si el software implementado se encuentra estable o no. La confirmación la otorga el equipo de QA y se prueban las funcionalidades más importantes siendo éste el mínimo set de pruebas.
+                También llamado test de aceptación. Proceso que determina si el software implementado se encuentra estable o no. La confirmación la otorga el equipo de QA y se prueban las funcionalidades más importantes siendo éste el mínimo set de pruebas.
               </div>
             </ion-accordion>
 

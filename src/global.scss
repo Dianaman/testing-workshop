@@ -28,6 +28,15 @@
 @import '~@ionic/angular/css/ionic-swiper';
 @import '~swiper/scss/pagination';
 
+@font-face {
+    font-family: AppFont;
+    src: url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+}
+
+:root {
+    --ion-font-family: 'Montserrat';
+}
+
 .content {
     padding: 16px;
     font-family: montserrat, Verdana, Tahoma, sans-serif;
@@ -63,4 +72,10 @@ code {
 
 li {
     margin-bottom: 10px;
+}
+
+ion-accordion-group {
+    ion-accordion {
+        font-family: montserrat, Verdana, Tahoma, sans-serif;
+    }
 }

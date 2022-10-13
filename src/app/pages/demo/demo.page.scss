@@ -1,0 +1,66 @@
+:host {
+    ion-list-header {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        ion-note {
+            font-size: 10px;
+        }
+    }
+    .cambio {
+        div {
+            margin-right: 10px;
+        }
+        .cambio-nombre {
+            width: 100px;
+        }
+        .cambio-compra {
+            color: var(--ion-color-success);
+        }
+        .cambio-venta {
+            color: var(--ion-color-danger);
+        }
+    }
+
+    .conversor-container {
+        display: flex;
+        flex-direction: column;
+
+        .conversor {
+            .cambios {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-evenly;
+                align-items: center;
+
+                ion-select {
+                    width: 200px;
+                    border: 1px solid var(--ion-color-medium-shade);
+                    border-radius: 5px;
+                    margin: 5px;
+                }
+            }
+
+            .montos {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-evenly;
+                align-items: center;
+
+                ion-input {
+                    width: 200px;
+                    border: 1px solid var(--ion-color-medium-shade);
+                    border-radius: 5px;
+                    margin: 5px;
+                    --padding-start: 20px;
+                }
+
+                .monto {
+                    text-decoration: dashed;
+                }
+            }
+        }
+
+    }
+}

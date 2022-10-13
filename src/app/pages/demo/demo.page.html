@@ -1,15 +1,44 @@
 <ion-header>
   <ion-toolbar>
     <ion-menu-button slot="start"></ion-menu-button>
-    <ion-title>demo</ion-title>
+    <ion-title>Demo</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <div class="content">
+    <div class="conversor-container">
+      <ion-label>Conversor</ion-label>
+      <div class="conversor" [formGroup]="formCambio">
+        <div class="cambios">
+          <ion-select formControlName="monedaActual">
+            <ion-select-option *ngFor="let cambio of tiposDeCambios" [value]="cambio" [disabled]="monedaAConvertir === cambio">
+              {{cambio}}
+            </ion-select-option>
+          </ion-select>
+          <ion-select formControlName="monedaAConvertir">
+            <ion-select-option *ngFor="let cambio of tiposDeCambios" [value]="cambio" [disabled]="monedaActual === cambio">
+              {{cambio}}
+            </ion-select-option>
+          </ion-select>          
+        </div>
+        <div class="montos">
+          <ion-input class="monto" placeholder="Valor a convertir" formControlName="monto"></ion-input>
+          <ion-input class="resultado" placeholder="Valor convertido" readonly [value]="monto | convertCurrency:monedaActual:monedaAConvertir | number:'0.0-2'"></ion-input>
+        </div>
+
+      </div>
+    </div>
     <ion-list>
-      <ion-item *ngFor="let item of list">
-        
+      <ion-list-header>
+        <ion-label>Valor del dólar</ion-label>
+        <ion-note>Última actualización: {{ultimaActualizacion$ | async | date:'dd/MM/yyyy hh:mm:ss'}} hs</ion-note>
+      </ion-list-header>
+      <ion-item *ngFor="let item of datos$ | async" class="cambio">
+        <div class="cambio-nombre">{{item?.casa?.nombre}}</div>
+        <div class="cambio-compra">${{item?.casa?.compra}}</div>
+        <div class="cambio-venta">${{item?.casa?.venta}}</div>
+        <div class="cambio-variacion">{{item?.casa?.variacion}}</div>
       </ion-item>
     </ion-list>
   </div>

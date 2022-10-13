@@ -1,5 +1,9 @@
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
+import { PipesModule } from 'src/app/pipes/pipes.module';
+import { ConversionService } from 'src/app/services/conversion.service';
 
 import { DemoPage } from './demo.page';
 
@@ -10,12 +14,12 @@ describe('DemoPage', () => {
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ DemoPage ],
-      imports: [IonicModule.forRoot()]
+      imports: [IonicModule.forRoot(), HttpClientTestingModule, PipesModule, FormsModule, ReactiveFormsModule],
+      providers: [ConversionService]
     }).compileComponents();
 
     fixture = TestBed.createComponent(DemoPage);
     component = fixture.componentInstance;
-    fixture.detectChanges();
   }));
 
   it('should create', () => {
@@ -23,14 +27,8 @@ describe('DemoPage', () => {
   });
 
   it('Debe invocar al servicio de conversión en el OnInit', () => {
-
-  });
-
-  it('Debe mostrar la fecha de última actualización', () => {
-
-  });
-
-  it('Debe mostrar los valores de cambio', () => {
-
+    let method = spyOn(component, 'loadList').and.callThrough();
+    fixture.detectChanges();
+    expect(method).toHaveBeenCalled();
   });
 });

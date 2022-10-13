@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Observable } from 'rxjs';
+import { ConversionService } from 'src/app/services/conversion.service';
 
 @Component({
   selector: 'app-demo',
@@ -6,28 +9,29 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./demo.page.scss'],
 })
 export class DemoPage implements OnInit {
-  public list: Array<any> = []
+  public datos$: Observable<Array<any>>;
+  public ultimaActualizacion$: Observable<Date>;
+  public tiposDeCambios: Array<String> = ['pesos', 'dolar blue', 'dolar oficial'];
+  public formCambio: FormGroup;
 
-  constructor() { }
+  public get monto() { return this.formCambio?.get('monto')?.value; }
+  public get monedaActual() { return this.formCambio?.get('monedaActual')?.value; }
+  public get monedaAConvertir() { return this.formCambio?.get('monedaAConvertir')?.value; }
+
+  constructor(private conversionService: ConversionService) { }
 
   ngOnInit() {
-    /** 
-     * @todo crear funcionalidad que cada x tiempo consulte una api. (dolarsi.com?)
-     * Si falla tomar el último valor del dispositivo. 
-     * Que haya la posibilidad de forzar la consulta a la api.
-     * Realizar conversiones
-    */
+    this.formCambio = new FormGroup({
+      monto: new FormControl(1, [Validators.required]),
+      monedaActual: new FormControl('pesos', [Validators.required]),
+      monedaAConvertir: new FormControl('dolar blue', [Validators.required]),
+    })
+    this.loadList();
   }
 
   public loadList(): void {
-
-  }
-
-  public getListFromStorage(): void {
-
-  }
-
-  public getListFromServer(): void {
-
+    this.datos$ = this.conversionService.getConversion();
+    this.ultimaActualizacion$ = this.conversionService.getFechaUltimaActualizacion();
+    this.conversionService.initTimer();
   }
 }
